@@ -18,8 +18,8 @@ WiFiClient espClient;
 
 
 //  MQTT Broker Setup  //
-// const char* mqttServer = "192.168.1.100"
-const char* mqttServer = "192.168.1.102";
+// const char* mqttServer = "XX.XXX.X.XXX"
+const char* mqttServer = "XX.XXX.X.XXX" //Input own IP address of wifi;
 const int mqttPort = 1883;
 const char* mqttID = "FlaskMan";
 PubSubClient client(espClient);
