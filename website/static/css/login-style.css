@@ -1,0 +1,53 @@
+body {
+    background-color: #122C34;
+    text-align: center;
+  }
+  
+  [class="container"] {
+    top: 50%;
+    margin-top: 110px;
+    width: 350px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 1 auto;
+  }
+
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+
+  [class = "Submit"]{
+    background-color: #224870;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+
+  }
+
+  [class ="error-message"] {
+    color: red;
+    font-size: 14px;
+  }
+
+/* 
+OFFICIAL COLOR TEMPLATE
+
+Gunmetal #122C34
+Indigo #224870
+marian blue #2A4494
+picton blue #4EA5D9
+robin egg blue  #44CFCB
+
+*/ 

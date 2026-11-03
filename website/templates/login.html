@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Login Page{% endblock %} 
+
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login-style.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h2>Admin Login</h2>
+        <form method="POST">
+            <input type="text" class="form-control" id="Username" name="Username" placeholder="Username" required>
+            <input type="Password" class="form-control" id="Password" name="Password" placeholder="Password"placeholder="Password" required>
+            <button class="Submit" id="Submit" type="Submit">Enter</button>
+        </form>
+    </div>
+{% endblock %}

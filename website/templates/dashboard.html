@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Dashboard{% endblock %}
+
+{%block style%}
+<!-- Styling of dashboard and libraries used for Socketio -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/db-style.css') }}">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.min.js"></script>
+{% endblock %}
+
+
+{% block body %}
+<!-- Attaining values from Socketio -->
+<script type="text/javascript">
+    var socket = io.connect("http://127.0.0.1:5000");
+    socket.on("update_temperature", function(data) {document.getElementById("temperature").innerHTML = data});
+    socket.on("update_humidity", function(data) {document.getElementById("humidity").innerHTML = data});
+    socket.on("update_quantity", function(data) {document.getElementById("quantity").innerHTML = data});
+</script>
+
+<!-- HTML scripts for displaying the sensor readings -->
+<script>
+    const gaugeElement1 = document.querySelector(".tempGauge");
+    let tempValue = document.getElementById("temperature");
+    
+    function setTempValue(gauge, value){
+         gauge.querySelector(".gaugeFill1").style.transform = `rotate(${(value/100)/2}turn)`;
+         gauge.querySelector(".gaugeCover1").textContent = `${value}°C`;
+     }
+
+    setTempValue(gaugeElement1, tempValue);
+</script>
+<div class="Sensor-readings">
+    <div class="row">
+        <div class="box1"><h2>Temperature</h2>
+            <div class="tempGauge">
+                <div class="gaugeBody1">
+                    <div class="gaugeFill1"></div>
+                    <div class="gaugeCover1">
+                        <span id = "temperature"></span>
+                    </div>
+                </div>
+            </div> 
+        </div>
+
+        
+        <script>
+            const gaugeElement2 = document.querySelector(".humiGauge");
+            let humiValue = document.getElementById("temperature"); 
+            function setHumiValue(gauge, value){
+                if(value < 0 || value > 100){
+                    return;
+                }
+                gauge.querySelector(".gaugeFill2").style.transform = `rotate(${(value/100)/2}turn)`;
+                gauge.querySelector(".gaugeCover2").textContent = `${Math.round(value)}%`;
+            }
+
+            setHumiValue(gaugeElement2, humiValue);
+        </script>
+        <div class="box2"><h2>Humidity</h2>
+            <div class="humiGauge">
+                <div class="gaugeBody2">
+                    <div class="gaugeFill2"></div>
+                    <div class="gaugeCover2">
+                        <span id = "humidity"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="box3"><h2>Quantity</h2>
+            <div class="quanReading">
+                <h2><span id="quantity"></span></h2>
+            </div>
+            <!-- <div class= "quantity_progress">
+                <div class="progress__fill"></div>
+                <span class="progress__text"> 
+                    <span id="quantity"></span>
+                </span>
+
+            </div>
+            <script>
+                const progressElement = document.querySelector(".quantity_progress");
+                let quanValue = document.getElementById("quantity");
+                function updateProgressBar(progressBar, value){
+                    value = Math.round(value);
+                    progressBar.querySelector(".progress__fill").style.width = `${value*33}%`;
+                    progressBar.querySelector(".progress__text").textContent = `${value*33}%`;
+                }
+                updateProgressBar(progressElement, quanValue);
+            </script> -->
+        </div>
+    </div>
+</div>
+{% endblock %}
