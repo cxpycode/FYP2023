@@ -12,9 +12,9 @@ DHT dht(DHT_SENSOR_PIN, DHT_SENSOR_TYPE);
 const char* ssid = "hkst2023";
 const char* password = "BEftsp2023#";
 
-//  Home WiFi Credentials
-//const char* ssid = "SINGTEL-8328";
-//const char* password = "shairielei";
+//  Home WiFi Credentials - INPUT OWN WIFI CREDENTIALS
+//const char* ssid = "XXXXXXXXX";
+//const char* password = "XXXXXXXXX";
 
 //  Web Server 
 WebServer server(80);
