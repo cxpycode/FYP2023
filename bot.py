@@ -4,7 +4,7 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 import paho.mqtt.client as mqtt
 
 # Telegram Bot Settings
-TOKEN: Final = "6403066167:AAGG4nVOf7Vo6c6x3oah_desETOMa4mltrY"
+TOKEN: Final = "XXXXXXXXX" #Insert own Bot Token
 BOT_USERNAME: Final = "@HKSTBot"
 
 # Define MQTT Client
