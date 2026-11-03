@@ -17,7 +17,7 @@ quanTopic = "sensor/quantity"
 
 
 #MQTT Config
-MQTT_BROKER_URL = "192.168.1.102"
+MQTT_BROKER_URL = "XXX.XXX.X.XX" #Input own URL for MQTT
 MQTT_BROKER_PORT = 1883
 MQTT_TOPICS = [tempTopic, humiTopic, quanTopic]
 MQTT_CLIENT_ID = 'flaskman'
