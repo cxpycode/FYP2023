@@ -15,3 +15,6 @@ Softwares/Languages:
 - C/C++ for machine programming and 
 - JS for webapp
 - Telegram Bot
+
+NOTES:
+- To access the source code. Go into each file and click 'src' or 'source' And you will be able to access it. 
